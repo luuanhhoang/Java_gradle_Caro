@@ -39,8 +39,10 @@ public class HoangdzMain {
                     PlayerService pl1 = PlayerList.get(0);
                     PlayerService pl2 = PlayerList.get(1);
 //
-//                    Thread t1 = new Thread(new PlayerHandler(pl1, pl2, true));
-//                    Thread t2 = new Thread(new PlayerHandler(pl2, pl1, false));
+                    Thread t1 = new Thread(new PlayerHandler(pl1, pl2, true));
+                    Thread t2 = new Thread(new PlayerHandler(pl2, pl1, false));
+                    t1.start();
+                    t2.start();
                 }
                 // s? l? evenent s? ki?n game
 //                new Thread(()-> {
